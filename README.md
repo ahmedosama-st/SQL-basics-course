@@ -1,6 +1,6 @@
 # Use the following code to get the same database as mine
 
-```
+```sql
 create database edms;
 
 use edms;
