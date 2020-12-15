@@ -30,9 +30,9 @@ values
 
 > Don't forget to follow us
 
-* Facebook page: https://bit.ly/39dTot4
-* Facebook group: https://bit.ly/39c5YsH
-* Telegram channel: https://bit.ly/35Zd41Z
-* Telegram group: https://bit.ly/361mzOd
-* Discord: https://bit.ly/39c8Ohw
-* Youtube: https://bit.ly/2J3v95R
+* [Facebook page](https://bit.ly/39dTot4)
+* [Facebook group](https://bit.ly/39c5YsH)
+* [Telegram channel](https://bit.ly/35Zd41Z)
+* [Telegram group](https://bit.ly/361mzOd)
+* [Discord](https://bit.ly/39c8Ohw)
+* [Youtube](https://bit.ly/2J3v95R)
