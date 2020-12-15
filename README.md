@@ -1,38 +1,5 @@
-# Use the following code to get the same database as mine
+# This repository is made for the source code of any lecture for our SQL basics and advanced course
 
-```
-create database edms;
+## If you haven't checked out the course yet, check it now!.. It's totally free ^^
 
-use edms;
-
-create table users(
-    id int unsigned not null primary key auto_increment,
-    name varchar(50) not null,
-    email varchar(64) not null,
-    password varchar(128) not null,
-    profession varchar(30) not null,
-    age int(3) not null,
-    salary int(4) not null
-);
-
-insert into
-    users(name, email, password, profession, age, salary)
-values
-    ('ahmed', 'ahmedosama@sectheater.org', '123456789', 'web developer', 19, 15000),
-    ('mohamed', 'mohamedosama@sectheater.org', '987654321', 'team lead', 23, 25000),
-    ('sal3awy', 'sal3awy@sectheater.org', '65546554', 'project manager', 28, 17000),
-    ('mahmoud', 'mahmoud@sectheater.org', '2112121324', 'web designer', 25, 9000),
-    ('gamal', 'gamal@sectheater.org', '12123123', 'full stack web developer', 29, 20000),
-    ('abdullah', 'abdullah@sectheater.org', '0110600505', 'android developer', 22, 8000)
-;
-
-```
-
-> Don't forget to follow us
-
-* Facebook page: https://bit.ly/39dTot4
-* Facebook group: https://bit.ly/39c5YsH
-* Telegram channel: https://bit.ly/35Zd41Z
-* Telegram group: https://bit.ly/361mzOd
-* Discord: https://bit.ly/39c8Ohw
-* Youtube: https://bit.ly/2J3v95R
+[Click here to watch the course](https://youtube.com/playlist?list=PL7mt2FDjAkPf5lpAnUDwbTYH4tuB-BN-v)
