@@ -1,4 +1,4 @@
-# This is the theortical part of [lesson-17]() in our [SQL course](https://youtube.com/playlist?list=PL7mt2FDjAkPf5lpAnUDwbTYH4tuB-BN-v) _I highly recommnd that you read it!_
+# This is the theortical part of [lesson-18]() in our [SQL course](https://youtube.com/playlist?list=PL7mt2FDjAkPf5lpAnUDwbTYH4tuB-BN-v) _I highly recommnd that you read it!_
 
 ## Join types
 
@@ -63,3 +63,13 @@ Nop.. In matter of fact, the table that has higher records (In our case courses,
 So in this very case, `select * from courses join students` is 100% equivalent to `select * from students join courses`
 
 In other case if students or instructors had more rows than courses, the repition would be in the favour of courses, for each student or instructor we have, all courses will be repeated for it.
+
+> # Clauses (ON and USING)
+>
+> The on clause is more like the where clause you're used to in the `select` statement in order to filter out data, Similarily you do so to filter out data in joins using the `ON` clause, For instance.
+
+```sql
+select * from courses inner join instructors ON courses.instructors_id = instructors.id;
+```
+
+In this query you are selecting all instructors that have instructed courses.
