@@ -1,4 +1,4 @@
-# This is the database schema for [lesson 17]()
+# This is the database schema for [lesson 17]() in our [SQL course](https://youtube.com/playlist?list=PL7mt2FDjAkPf5lpAnUDwbTYH4tuB-BN-v)
 
 ## Use the following code to get the same database as mine or download index.sql file
 
