@@ -1,5 +1,7 @@
 # This is the database schema for lesson 10
-## Use the following code to get the same database as mine
+
+## Use the following code to get the same database as mine or download index.sql file
+
 ---
 
 ```sql
@@ -50,12 +52,14 @@ values
 ```
 
 ## Don't forget to follow us
+
 ---
->[Facebook page](https://bit.ly/39dTot4)
 
->[Facebook group](https://bit.ly/39c5YsH)
+> [Facebook page](https://bit.ly/39dTot4)
 
->[Telegram channel](https://bit.ly/35Zd41Z)
+> [Facebook group](https://bit.ly/39c5YsH)
+
+> [Telegram channel](https://bit.ly/35Zd41Z)
 
 > [Telegram group](https://bit.ly/361mzOd)
 
