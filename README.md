@@ -1,65 +1,105 @@
-# This is the theortical part of [lesson-17]() in our [SQL course](https://youtube.com/playlist?list=PL7mt2FDjAkPf5lpAnUDwbTYH4tuB-BN-v) _I highly recommnd that you read it!_
+# This is the database schema for [lesson 16]()
 
-## Join types
-
-![SQL types](./sql-types.jpg)
-
-```
-1. Join (Inner join)
-2. Outer Join
-
-   2.1 Left join (Left Outer Join)
-   2.2 Right join (Right Outer Join)
-   2.3 Full join (Full Outer Join)
-
-3. Natural join (Natural Join)
-4. Self join (Self Join)
-5. Cross join (Cross Join)
-```
-
-> # **Inner JOIN or JOIN**
-
-### NOTE: Inner join is completely equivalent to JOIN in MySQL but it's a recommendation to use INNER JOIN as it's more descriptive
+## Use the following code to get the same database as mine or download index.sql file
 
 ---
 
-In this type of `JOIN`, you can get all records of table 1 (Left table to `JOIN statement` by default) and all the records within table 2 (The table right to `JOIN statement`)
-
-For instance, running such query
-
 ```sql
-select courses.title, students.email from courses join students;
+create database udemy_clone charset utf8mb4 collate utf8mb4_general_ci;
+
+use udemy_clone;
+
+create table students(
+    id int unsigned not null auto_increment primary key,
+    first_name varchar(32) not null,
+    last_name varchar(32) not null,
+    email varchar(50) unique not null,
+    password varchar(128) not null
+);
+
+create table instructors(
+    id int unsigned not null auto_increment primary key,
+    first_name varchar(32) not null,
+    last_name varchar(32) not null,
+    email varchar(50) unique not null,
+    password varchar(128) not null
+);
+
+create table courses(
+    id int unsigned not null  auto_increment primary key,
+    title varchar(32) unique not null,
+    description varchar(255) not null,
+    price decimal(4, 2) not null,
+    instructor_id int unsigned not null
+);
+
+alter table courses add foreign key (instructor_id) references instructors(id) on delete cascade;
+
+create table course_student(
+    id int unsigned not null auto_increment primary key,
+    student_id int unsigned not null,
+    course_id int unsigned not null
+);
+
+alter table course_student add foreign key (course_id) references courses(id) on delete cascade;
+alter table course_student add foreign key (student_id) references students(id) on delete cascade;
+
+insert into
+    students(first_name, last_name, email, password)
+values
+    ('ammar', 'mohamed', 'ammar.mohamed@gmail.com', '123456789'),
+    ('mahmoud', 'gamal', 'mahmoud_gamal9292@gmail.com', 'welcomehome'),
+    ('ahmed', 'ali', 'ali.ahmed_191@gmail.com', 'myperfectpassword'),
+    ('esmail', 'elsayed', 'esmail_elsayed28@gmail.com', 'nonecanhackmypassword')
+;
+
+insert into
+    instructors(first_name, last_name, email, password)
+values
+    ('ahmed', 'osama', 'ahmedosama@sectheater.org', 'secret'),
+    ('mohamed', 'osama', 'mohamedosama@sectheater.org', 'secret')
+;
+
+insert into
+    courses(title, description, price, instructor_id)
+values
+    ('web development', 'a 170 hour course about web development', 80.00, 1),
+    ('database management', 'a 15 hour course about managing your database', 40.00, 1),
+    ('embedded systems', 'a 28 hour course about embedded systems', 60.00, 1),
+    ('advanced laravel', 'a 25 hour course about advanced concepts in laravel', 10.00, 2),
+    ('micro services', 'an 8 hour course about microservices', 10.00, 2),
+    ('vueJS from zero to mastery', 'an 25 hour course everything in VueJS', 75.00, 2)
+;
+
+insert into
+    course_student(student_id, course_id)
+values
+    (1, 1),
+    (1, 4),
+    (2, 2),
+    (2, 4),
+    (3, 4),
+    (3, 1),
+    (4, 1),
+    (2, 1),
+    (2, 5),
+    (4, 6),
+    (1, 6),
+    (1, 5)
+;
 ```
+---
+## Don't forget to follow us
 
-result would be something like this table.
 
-|        Title        |           Email           |
-| :-----------------: | :-----------------------: |
-|  Advanced Laravel   | ahmedosama@sectheater.org |
-|  Advanced Laravel   |  mahmoudeladly@gmail.com  |
-|  Advanced Laravel   |    ahmedatef@gmail.com    |
-|  Advanced Laravel   |   saeedelgaml@gmail.com   |
-| database management | ahmedosama@sectheater.org |
-| database management |  mahmoudeladly@gmail.com  |
-| database management |    ahmedatef@gmail.com    |
-| database management |   saeedelgaml@gmail.com   |
+> [Facebook page](https://bit.ly/39dTot4)
 
-It's pretty obvious that all records in students are repeated for each row in courses
+> [Facebook group](https://bit.ly/39c5YsH)
 
-similarily if you would do
+> [Telegram channel](https://bit.ly/35Zd41Z)
 
-```sql
-select courses.title, instructors.email from courses join instructors;
-```
+> [Telegram group](https://bit.ly/361mzOd)
 
-you would find out that all instructors are repeated for each course you have.
+> [Discord](https://bit.ly/39c8Ohw)
 
-In other words, for each element in courses, all students,instructors are repeated according to the number of elements in students or instructors.
-
-Hmm.. maybe if we reversed table orders it would change how it repeats elements, right?
-
-Nop.. In matter of fact, the table that has higher records (In our case courses, it has 6 courses) will be the elected one by SQL to repeat other tables based on it.
-
-So in this very case, `select * from courses join students` is 100% equivalent to `select * from students join courses`
-
-In other case if students or instructors had more rows than courses, the repition would be in the favour of courses, for each student or instructor we have, all courses will be repeated for it.
+> [Youtube](https://bit.ly/2J3v95R)
